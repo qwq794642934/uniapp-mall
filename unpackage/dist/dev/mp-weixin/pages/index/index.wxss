@@ -1,0 +1,26 @@
+
+swiper.data-v-9202291c{
+	width: 100%;
+	height: 400rpx;
+}
+.swiper-img.data-v-9202291c{
+	width: 100%;
+	height: 400rpx;
+}
+
+
+.scroll-content.data-v-15624194{
+	width: 100%;
+	white-space: nowrap;
+}
+.scroll-item.data-v-15624194{
+	font-size: 50rpx;
+	padding: 10rpx 30rpx;
+	display: inline-block;
+}
+.active.data-v-15624194{
+	padding-bottom: 10rpx;
+	color: #0A98D5;
+	border-bottom: #0A98D5 solid 6rpx;
+}
+

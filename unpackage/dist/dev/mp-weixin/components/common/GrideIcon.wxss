@@ -1,0 +1,24 @@
+
+.gride.data-v-252fb8d2{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		        justify-content: center;
+		grid-gap: 1%;
+}
+.gride-item.data-v-252fb8d2{
+	/* width: 25%; */
+	/* height: 200rpx; */
+	text-align: center;
+}
+.title.data-v-252fb8d2{
+	font-size: 35rpx;
+}
+.item-img.data-v-252fb8d2{
+	border-radius: 10rpx;
+	height: 140rpx;
+	width: 160rpx;
+}
+

@@ -1,0 +1,36 @@
+
+.wx-nav.data-v-efac643e {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 9;
+	background: #FFFFFF;
+	
+	text-align: center;
+	height: 150rpx;
+	width: 100%;
+	line-height: 150rpx;
+	font-size: 35rpx;
+
+	display: -webkit-box;
+
+	display: -webkit-flex;
+
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.iconfont.data-v-efac643e {
+	font-size: 50rpx;
+}
+.icon-fangdajing1.data-v-efac643e {
+	margin-left: 15rpx;
+}
+.icon-xiaoxi2.data-v-efac643e {
+	margin-right: 15rpx;
+}
+

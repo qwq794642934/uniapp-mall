@@ -1,0 +1,28 @@
+/* 全局css文件*/
+
+/* 全局背景颜色 */
+.bg-color{
+	background-color: #49bdfb;
+}
+
+
+/* 全局字体 颜色*/
+.f-color {
+	color: #636263;
+}
+/* 选择字体颜色 */
+.f-active-color{
+	color: #49bdfb;
+}
+/* 全局字体大小 */
+.f-size{
+	font-size: 14px;
+}
+
+::-webkit-scrollbar {  
+    display: none;  
+    width: 0 !important;  
+    height: 0 !important;  
+    -webkit-appearance: none;  
+    background: transparent;  
+}
