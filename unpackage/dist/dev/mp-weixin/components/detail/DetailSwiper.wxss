@@ -1,0 +1,10 @@
+
+swiper.data-v-7ea21534 {
+	width: 100%;
+	height: 850rpx;
+}
+.swiper-item image.data-v-7ea21534{
+	width: 100%;
+	height: 800rpx;
+}
+

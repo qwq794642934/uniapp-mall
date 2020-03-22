@@ -1,0 +1,1 @@
+<view class="card data-v-4069d17e"><view class="card-side data-v-4069d17e"></view><block wx:if="{{$slots.center}}"><slot name="center"></slot></block><block wx:else><view class="card-title data-v-4069d17e">{{cardTitle}}</view></block><view class="card-side data-v-4069d17e"></view></view>

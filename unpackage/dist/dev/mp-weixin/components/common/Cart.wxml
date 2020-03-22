@@ -1,1 +1,0 @@
-<view class="cart data-v-3ea6e15e"><view class="cart-side data-v-3ea6e15e"></view><block wx:if="{{$slots.center}}"><slot name="center"></slot></block><block wx:else><view class="cart-title data-v-3ea6e15e">{{cartTitle}}</view></block><view class="cart-side data-v-3ea6e15e"></view></view>

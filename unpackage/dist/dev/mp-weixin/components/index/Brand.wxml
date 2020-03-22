@@ -1,0 +1,1 @@
+<view class="brand to-brand data-v-b90e2152"><block wx:for="{{brandList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="brand-item data-v-b90e2152"><image class="item-img data-v-b90e2152" src="{{item.imgUrl}}"></image></view></block></view>

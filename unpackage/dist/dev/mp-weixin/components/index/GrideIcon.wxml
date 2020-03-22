@@ -1,0 +1,1 @@
+<view class="gride to-gride data-v-a9602370"><block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="gride-item data-v-a9602370"><image class="item-img data-v-a9602370" src="{{item.imgUrl}}" mode></image><text class="title data-v-a9602370">{{item.name}}</text></view></block></view>

@@ -1,0 +1,14 @@
+
+.big-img.data-v-2bf29ed6{
+	height: 350rpx;
+	width: 100%;
+}
+.scroll-content.data-v-2bf29ed6{
+	width: 100%;
+	white-space: nowrap;
+}
+.scroll-item.data-v-2bf29ed6{
+	display: inline-block;
+}
+
+

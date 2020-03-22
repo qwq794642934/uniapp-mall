@@ -4,7 +4,9 @@
     "pages/category/category",
     "pages/cart/cart",
     "pages/profile/profile",
-    "components/IndexSwiper/IndexSwiper"
+    "pages/Search/Search",
+    "pages/Result/Result",
+    "pages/Detail/Detail"
   ],
   "subPackages": [],
   "window": {
@@ -43,6 +45,5 @@
     ]
   },
   "permission": {},
-  "usingComponents": {},
-  "sitemapLocation": "sitemap60.json"
+  "usingComponents": {}
 }

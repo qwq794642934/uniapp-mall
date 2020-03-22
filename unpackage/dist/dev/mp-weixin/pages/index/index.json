@@ -2,15 +2,16 @@
   "navigationBarTitleText": "百年奥莱",
   "navigationStyle": "custom",
   "usingComponents": {
+    "card": "/components/common/Card",
+    "shop": "/components/index/Shop",
+    "brand": "/components/index/Brand",
+    "banner": "/components/index/Banner",
     "nav-bar": "/components/common/NavBar",
-    "index-swiper": "/components/IndexSwiper/IndexSwiper",
-    "recommend": "/components/common/Recommend",
-    "cart": "/components/common/Cart",
+    "show-img": "/components/index/ShowImg",
+    "gride-icon": "/components/index/GrideIcon",
+    "recommend": "/components/index/Recommend",
     "produc-list": "/components/common/ProductList",
-    "banner": "/components/common/Banner",
-    "gride-icon": "/components/common/GrideIcon",
-    "gride-img": "/components/common/GrideImg",
-    "show-img": "/components/common/ShowImg",
-    "shop": "/components/common/Shop"
+    "product-item": "/components/common/ProductItem",
+    "index-swiper": "/components/index/IndexSwiper"
   }
 }

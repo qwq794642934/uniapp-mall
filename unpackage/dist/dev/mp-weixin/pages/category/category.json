@@ -1,4 +1,8 @@
 {
-  "navigationBarTitleText": "分类",
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "lines": "/components/common/Lines",
+    "product-item": "/components/common/ProductItem"
+  }
 }

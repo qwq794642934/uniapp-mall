@@ -8508,7 +8508,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "百年奥莱", "navigationStyle": "custom", "usingComponents": { "nav-bar": "/components/common/NavBar", "index-swiper": "/components/IndexSwiper/IndexSwiper", "recommend": "/components/common/Recommend", "cart": "/components/common/Cart", "produc-list": "/components/common/ProductList", "banner": "/components/common/Banner", "gride-icon": "/components/common/GrideIcon", "gride-img": "/components/common/GrideImg", "show-img": "/components/common/ShowImg", "shop": "/components/common/Shop" }, "usingAutoImportComponents": {} }, "pages/category/category": { "navigationBarTitleText": "分类", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/cart/cart": { "navigationBarTitleText": "购物车", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/profile/profile": { "navigationBarTitleText": "个人中心", "usingComponents": {}, "usingAutoImportComponents": {} }, "components/IndexSwiper/IndexSwiper": { "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "我的应用", "navigationBarBackgroundColor": "#ffffff", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "百年奥莱", "navigationStyle": "custom" }, "pages/category/category": { "navigationBarBackgroundColor": "#FFFFFF", "navigationStyle": "custom" }, "pages/cart/cart": { "navigationBarTitleText": "购物车" }, "pages/profile/profile": { "navigationBarTitleText": "个人中心" }, "pages/Search/Search": { "navigationBarBackgroundColor": "#FFFFFF", "navigationStyle": "custom" }, "pages/Result/Result": { "navigationBarBackgroundColor": "#FFFFFF", "navigationStyle": "custom" }, "pages/Detail/Detail": { "navigationBarTitleText": "商品详情" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "我的应用", "navigationBarBackgroundColor": "#ffffff", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8645,6 +8645,146 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */
+/*!**********************************************************************!*\
+  !*** C:/Users/liufujun/OneDrive/桌面/appdemo/appdemo/common/mixins.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.pageHeight = void 0;var pageHeight = {
+  data: function data() {
+    return {
+      pageHeight: 0 };
+
+  },
+  onReady: function onReady() {
+    this.getPageHeight();
+  },
+  methods: {
+    // 获取可视区兼容
+    getPageHeight: function getPageHeight() {
+      // 使用 同步方法判断平台
+      var result = uni.getSystemInfoSync();
+      var platform = result.platform;
+      var statusBarHeight = result.statusBarHeight;
+      console.log(result);
+      var windowHeight = result.windowHeight;
+      if (platform === 'ios') {
+        this.pageHeight = windowHeight - uni.upx2px(80) - 44 - statusBarHeight;
+      } else if (platform === 'android') {
+        this.pageHeight = windowHeight - uni.upx2px(80) - 30 - statusBarHeight;
+      } else {
+        this.pageHeight = windowHeight;
+      }
+    } } };exports.pageHeight = pageHeight;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 22 */
+/*!**********************************************************************!*\
+  !*** C:/Users/liufujun/OneDrive/桌面/appdemo/appdemo/network/index.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getData = getData;exports.getSearchData = getSearchData;var _request = __webpack_require__(/*! ./request.js */ 23);
+
+function getData(id, page) {
+  return (0, _request.request)({
+    url: "/index_list/".concat(id, "/data/").concat(page, "/") });
+
+}
+
+function getSearchData(keyword, appoint, orderName) {
+  if (appoint === undefined && orderName === undefined) {
+    return (0, _request.request)({
+      url: "/index_list/goods/search",
+      data: {
+        keyword: keyword } });
+
+
+  } else {
+    return (0, _request.request)({
+      url: "/index_list/goods/search",
+      data: {
+        keyword: keyword,
+        appoint: appoint,
+        orderName: orderName } });
+
+
+  }
+
+}
+
+/***/ }),
+/* 23 */
+/*!************************************************************************!*\
+  !*** C:/Users/liufujun/OneDrive/桌面/appdemo/appdemo/network/request.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.request = request;var baseURLA = 'http://192.168.43.147:8000/api';
+var baseURLB = 'http://192.168.3.13:8000/api';
+var timeout = 5000;
+
+function request(options) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: baseURLB + options.url,
+      data: options.data,
+      timeout: timeout,
+      success: function success(res) {
+        resolve(res.data);
+      } });
+
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */
+/*!*************************************************************************!*\
+  !*** C:/Users/liufujun/OneDrive/桌面/appdemo/appdemo/network/category.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getTitle = getTitle;exports.getContent = getContent;var _request = __webpack_require__(/*! ./request.js */ 23);
+
+
+function getTitle() {
+  return (0, _request.request)({
+    url: '/category/title' });
+
+}
+
+function getContent(id) {
+  return (0, _request.request)({
+    url: "/category/title/".concat(id) });
+
+}
 
 /***/ })
 ]]);

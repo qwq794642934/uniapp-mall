@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/common/Banner":1,"components/common/Cart":1,"components/common/GrideIcon":1,"components/common/GrideImg":1,"components/common/NavBar":1,"components/common/ProductList":1,"components/common/Recommend":1,"components/common/Shop":1,"components/common/ShowImg":1};
+/******/ 		var cssChunks = {"components/common/Card":1,"components/common/NavBar":1,"components/common/ProductItem":1,"components/index/Banner":1,"components/index/Brand":1,"components/index/GrideIcon":1,"components/index/IndexSwiper":1,"components/index/Recommend":1,"components/index/Shop":1,"components/index/ShowImg":1,"components/common/Lines":1,"components/common/ShowList":1,"components/detail/BottomBar":1,"components/detail/DetailSwiper":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/common/Banner":"components/common/Banner","components/common/Cart":"components/common/Cart","components/common/GrideIcon":"components/common/GrideIcon","components/common/GrideImg":"components/common/GrideImg","components/common/NavBar":"components/common/NavBar","components/common/ProductList":"components/common/ProductList","components/common/Recommend":"components/common/Recommend","components/common/Shop":"components/common/Shop","components/common/ShowImg":"components/common/ShowImg"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/common/Card":"components/common/Card","components/common/NavBar":"components/common/NavBar","components/common/ProductItem":"components/common/ProductItem","components/common/ProductList":"components/common/ProductList","components/index/Banner":"components/index/Banner","components/index/Brand":"components/index/Brand","components/index/GrideIcon":"components/index/GrideIcon","components/index/IndexSwiper":"components/index/IndexSwiper","components/index/Recommend":"components/index/Recommend","components/index/Shop":"components/index/Shop","components/index/ShowImg":"components/index/ShowImg","components/common/Lines":"components/common/Lines","components/common/ShowList":"components/common/ShowList","components/detail/BottomBar":"components/detail/BottomBar","components/detail/DetailSwiper":"components/detail/DetailSwiper"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

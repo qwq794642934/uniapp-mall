@@ -1,0 +1,35 @@
+
+.search-title.data-v-ea17d524 {
+	padding: 15rpx 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.icon-lajitong.data-v-ea17d524,
+.f-color.data-v-ea17d524 {
+	font-size: 25rpx;
+}
+.search-content.data-v-ea17d524 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.search-name.data-v-ea17d524 {
+	background: #e4e4e4;
+	border-radius: 25rpx;
+	font-size: 25rpx;
+	box-sizing: border-box;
+	padding: 0 25rpx;
+	margin: 10rpx;
+}
+.search-end.data-v-ea17d524{
+	text-align: center;
+	font-size: 25rpx;
+}
+
+
