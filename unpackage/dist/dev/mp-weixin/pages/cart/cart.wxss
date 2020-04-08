@@ -1,0 +1,96 @@
+
+.shop-list.data-v-3bf675ae{
+	padding-bottom: 120rpx;
+}
+.shop-item.data-v-3bf675ae{
+	 height: 240rpx;
+	 width: 100%;
+	 display: -webkit-box;
+	 display: -webkit-flex;
+	 display: flex;
+	 -webkit-box-align: center;
+	 -webkit-align-items: center;
+	         align-items: center;
+	 background-color: #ebebeb;
+	 border-bottom: #fff 10px solid;
+}
+.scroll-item .image.data-v-3bf675ae{
+	 width: 200rpx;
+	 height: 200rpx;
+}
+.shop-item image.data-v-3bf675ae{
+	 margin-top: 20rpx;
+	 width: 200rpx;
+	 height: 200rpx;
+}
+.shop-item .shop-profile.data-v-3bf675ae{	
+	 margin-left: 20rpx;
+}
+.shop-profile .shop-name.data-v-3bf675ae{
+	 line-height: 1;
+}
+.shop-profile .category.data-v-3bf675ae{
+	 font-size: 28rpx;
+	 margin-top: 10rpx;
+}
+.price.data-v-3bf675ae{
+	width: 440rpx;
+	 display: -webkit-box;
+	 display: -webkit-flex;
+	 display: flex;
+	 -webkit-box-pack: justify;
+	 -webkit-justify-content: space-between;
+	         justify-content: space-between;
+}
+.bottom-bar.data-v-3bf675ae{
+	 height: 120rpx;
+	 width: 100%;
+	 position: fixed;
+	 bottom: 0;
+	 left: 0;
+	 right: 0;
+	 display: -webkit-box;
+	 display: -webkit-flex;
+	 display: flex;
+	 background-color: #fff;
+	 -webkit-box-pack: justify;
+	 -webkit-justify-content: space-between;
+	         justify-content: space-between;
+	 -webkit-box-align: center;
+	 -webkit-align-items: center;
+	         align-items: center;
+}
+.shop-list .radio.data-v-3bf675ae{
+	 margin-left: 20rpx;
+}
+.bottom-bar .radio.data-v-3bf675ae{
+	 margin-left: 20rpx;
+	 font-size: 40rpx;
+	 color: #333333;
+}
+.btn.data-v-3bf675ae{
+	 width: 200rpx;
+	 background-color: #007AFF;
+	 color: #fff;
+	 font-size: 40rpx;
+	 line-height: 120rpx;
+	 text-align: center;
+}
+.total-price text.data-v-3bf675ae{
+	 font-size: 40rpx;
+	 color: #00A2F3;
+}
+.is-none.data-v-3bf675ae{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		        justify-content: center;
+		position: relative;
+		margin-top: 50%;
+}
+

@@ -1,7 +1,11 @@
 <template>
 	<view class="bottom-bar">
 		<view class="message  iconfont icon-xiaoxi"/>
-		<view class="cart iconfont icon-gouwuche"/>
+		<view class="cart iconfont icon-gouwuche" @click="goTocart">
+			<view class="icon" v-if="count > 0">
+				+{{count}}
+			</view>
+		</view>
 		<view class="add" @click="addTocart()">加入购物车</view>
 		<view class="buy" @click="buy()">立即购买</view>
 	</view>
@@ -15,13 +19,22 @@
 			},
 			addTocart(){
 				this.$emit('addClick')
+			},
+			goTocart(){
+				this.$emit('goTocart')
+			}
+		},
+		props:{
+			count: {
+				type: Number,
+				default: 0
 			}
 		}
 	}
 </script>
 
 <style scoped>
-	@import url("//at.alicdn.com/t/font_1706365_rk4vegwnlqq.css");
+/* @import url(//at.alicdn.com/t/font_1706365_rk4vegwnlqq.css); */
 .bottom-bar{
 		position: fixed;
 		bottom: 0;
@@ -46,12 +59,6 @@
 		line-height: 70rpx;
 		
 	}
-	.message{
-		
-	}
-	.cart{
-
-	}
 .add{
 	background: #000;
 	color: #FFFFFF;
@@ -70,5 +77,20 @@
 	height: 60rpx;
 	width: 180rpx;
 	line-height: 60rpx;
+}
+.cart{
+	position: relative;
+}
+.icon{
+	position: absolute;
+	top: -10rpx;
+	right: -10rpx;
+	width: 30rpx;
+	background: #f00a34;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 30rpx;
+	font-size: 17rpx
 }
 </style>

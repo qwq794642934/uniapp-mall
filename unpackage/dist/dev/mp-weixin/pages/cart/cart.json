@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "购物车",
-  "usingComponents": {}
+  "usingComponents": {
+    "nav-bar": "/components/uni-app/uni-nav-bar/uni-nav-bar",
+    "icon": "/components/uni-app/uni-icons/uni-icons",
+    "status-bar": "/components/uni-app/uni-status-bar/uni-status-bar"
+  }
 }

@@ -1,20 +1,20 @@
 <template>
 	<view class="detail">
-		<DetailSwiper/>
+		<DetailSwiper :img="data.imgUrl" />
 		<view class="product-info">
 			
 			<!-- 价格 -->
 			<view class="price">
 				<view class="new-price margin">
-					600
+					{{data.pprice}}
 				</view>
 				<view class="old-price margin">
-					原价￥11111.00
+					原价￥{{data.oprice}}.00
 				</view>
 			</view>
 			<!-- 商品名称 -->
 			<view class="title margin">
-				【自营】ONLY女时尚宽松短款棉服外套7168162861
+				{{data.name}}
 			</view>
 			<view class="tags margin">
 				<view class="tag-item">
@@ -132,15 +132,16 @@
 				<li>100</li>
 			</ul>
 		</view>
-		<Bottombar @buyClick="buyClick()" @addClick="addClick()"/>
+		<Bottombar @goTocart="goTocart" :count="num" @buyClick="buyClick()" @addClick="addClick()"/>
 		<!-- 底部滑块 -->
 		<view class="pop" v-if="isShow" @touchmove.stop.prevent="">
 			<view class="mask" @click="hiddenClick"/>
 			<view class="option" :animation="animationData">
+				
 				<view class="info">
-					<image src="../../static/brand/honor.jpg" mode=""/>
+					<image :src="data.imgUrl" mode=""/>
 					<view class="info-item">
-						<span class="sel-price">$158.00</span>
+						<span class="sel-price">${{data.pprice}}</span>
 						<view class="select">
 							<span class="count">可购110件</span>
 							<view class="select-item">
@@ -149,10 +150,25 @@
 								<text class="sel">尺寸</text>
 							</view>
 						</view>
-						
 					</view>
 				</view>
 				
+				<view class="category">
+					<span>颜色分类</span>
+				</view>
+				
+				<view class="size">
+					<span>尺码</span>
+				</view>
+				
+				<view class="count">
+					<span>购买数量</span>
+					<number-box min="1" :value="count" @change="changeNumber"/>
+				</view>
+				
+				<view class="btn" @click="addCart">
+					确定
+				</view>
 				
 			</view>
 		</view>
@@ -162,15 +178,88 @@
 <script>
 	import DetailSwiper from "@/components/detail/DetailSwiper"
 	import Bottombar from "@/components/detail/BottomBar"
+	import NumberBox from "@/components/uni-app/uni-number-box/uni-number-box"
+	import {getDetail} from "@/network/detail.js"
+	import {mapMutations} from "vuex"
 	export default {
-		components:{DetailSwiper, Bottombar},
+		components:{
+			DetailSwiper,
+			Bottombar,
+			NumberBox},
 		data() {
 			return {
 				isShow: false,
-				animationData: {}
+				animationData: {},
+				data: {},
+				count: 1,
+				num: 0
+			}
+		},
+		onBackPress(e){
+			if(this.isShow){
+				this.hiddenClick()
+				return true;
+			}
+		},
+		onNavigationBarButtonTap(e) {
+			if(e.type === 'share'){
+				uni.share({
+					provider:'weixin',
+					type:0,
+					title: this.data.name,
+					scene: 'WXSenceTimeline',
+					summary: this.data.name,
+					href:'http://192.168.3.13:8000/api/detail?id='+ this.data.id,
+					imageUrl:'',
+					success(res) {
+						uni.showTabBar({
+							title:'分享成功'
+						})
+					},
+					fail(err) {
+						uni.showTabBar({
+							title: JSON.stringify(err)
+						})
+					}
+					
+				})
 			}
 		},
 		methods: {
+			// 底部购物车按钮跳转
+			goTocart(){
+				uni.switchTab({
+					url:'../cart/cart'
+				})
+			},
+			// vuex actions 添加购物车方法
+			...mapMutations('cart', ['addToCart']),
+			// 网络请求
+			_getDetail(id){
+				getDetail(id).then(res => {
+					this.data = res.data[0]
+				})
+			},
+			//商品数量改变
+			changeNumber(value){
+				this.count = value
+			},
+			// 添加商品到购物车
+			addCart(){
+				let product = {}
+				product.id = this.data.id
+				product.price = this.data.pprice
+				product.count = this.count
+				product.imgUrl = this.data.imgUrl
+				product.name = this.data.name
+				this.num +=  parseInt(this.count)
+				this.addToCart(product)
+				uni.showToast({
+					title:'购物车添加成功',
+					icon:'none'
+				})
+				this.hiddenClick()
+			},
 			buyClick(){
 				var animation = uni.createAnimation({
 				     duration: 200
@@ -210,7 +299,13 @@
 				this.isShow = false
 			}, 200)
 			}
+		},
+		onLoad(e) {
+			console.log(e.id);
+			this._getDetail(e.id)
 		}
+		
+		
 		
 	}
 </script>
@@ -320,6 +415,26 @@
 .sel{
 	padding: 0 10rpx 0 0;
 }
+
+.btn{
+	position: absolute;
+	bottom: 0;
+	height: 80rpx;
+	width: 100%;
+	color: #FFFFFF;
+	background: #00A2F3;
+	line-height: 80rpx;
+	text-align: center;
+}
+.count {
+	display: flex;
+	justify-content: space-between;
+}
+.count span{
+	font-size: 30rpx
+}
+
+
 	
 
 </style>

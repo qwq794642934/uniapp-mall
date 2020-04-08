@@ -2,6 +2,7 @@
   "navigationBarTitleText": "商品详情",
   "usingComponents": {
     "detail-swiper": "/components/detail/DetailSwiper",
-    "bottombar": "/components/detail/BottomBar"
+    "bottombar": "/components/detail/BottomBar",
+    "number-box": "/components/uni-app/uni-number-box/uni-number-box"
   }
 }

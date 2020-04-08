@@ -1,14 +1,9 @@
 <template>
 <view >
 	<swiper :indicator-dots="true" >
-		<swiper-item>
+		<swiper-item >
 			<view class="swiper-item">
-				<image src="../../static/product/commodity4.jpg" mode=""></image>
-			</view>
-		</swiper-item>
-		<swiper-item>
-			<view class="swiper-item">
-				<image src="../../static/product/commodity2.jpg" mode=""></image>
+				<image :src="img" mode=""></image>
 			</view>
 		</swiper-item>
 	</swiper>
@@ -17,7 +12,9 @@
 
 <script>
 	export default {
-		
+		props:{
+			img: String
+		}
 	}
 </script>
 

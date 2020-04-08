@@ -52,7 +52,7 @@
 								</template>
 								
 								<template v-if="k.type === 'hostList'">
-									<ProductItem :prdItemList="k.data" :ItemW="ItemW" :ImgH="ImgH"/>
+									<ProductItem :prdItemList="k.data" :ItemW="ItemW" :ImgH="ImgH" />
 									<card cardTitle="推荐店铺"/>
 								</template>
 								

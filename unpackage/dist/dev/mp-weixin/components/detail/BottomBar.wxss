@@ -1,5 +1,27 @@
-@import url(//at.alicdn.com/t/font_1706365_rk4vegwnlqq.css);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @import url(//at.alicdn.com/t/font_1706365_rk4vegwnlqq.css); */
 .bottom-bar.data-v-61e9c326{
 		position: fixed;
 		bottom: 0;
@@ -28,10 +50,6 @@
 		width: 70rpx;
 		height: 70rpx;
 		line-height: 70rpx;
-}
-.message.data-v-61e9c326{
-}
-.cart.data-v-61e9c326{
 }
 .add.data-v-61e9c326{
 	background: #000;

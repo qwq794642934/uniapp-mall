@@ -3,7 +3,8 @@
 		<view class="product-item"
 		:style="[{'width' : ItemW + 'rpx'}]"
 		v-for="(item, index) in prdItemList" 
-		:key="index" >
+		:key="index" 
+		@click="goDetail(item.id)">
 		
 			<image  
 			class="product-img"
@@ -58,6 +59,15 @@
 				type: Number,
 				default: 26
 			},
+		},
+		methods:{
+			goDetail(id){
+				uni.navigateTo({
+					url:"../../pages/Detail/Detail?id="+ id,
+					
+				})
+				
+			}
 		}
 	}
 </script>

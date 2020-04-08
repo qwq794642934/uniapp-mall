@@ -2,7 +2,7 @@ import { request } from "./request.js"
 
 export function  getData(id, page){
 	return request({
-		url: `/index_list/${id}/data/${page}/`
+		url: `/index_list/${id}/data/${page}`
 	})
 }
 
