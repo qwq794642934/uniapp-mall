@@ -4025,7 +4025,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("删除")]
+                            [_vm._v("删除" + _vm._$g(25, "t0"))]
                           )
                         ],
                         1
@@ -4045,7 +4045,7 @@ var render = function() {
                       _c(
                         "v-uni-view",
                         { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                        [_vm._v("结算(" + _vm._$g(29, "t0") + ")")]
+                        [_vm._v("结算" + _vm._$g(29, "t0"))]
                       )
                     ]
               ],

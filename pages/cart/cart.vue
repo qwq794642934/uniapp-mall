@@ -47,7 +47,7 @@
 					<template v-if="isNav">
 					<view class="button">
 						<view class="btn black">移入收藏夹</view>
-						<view class="btn blue" @click="delItem">删除</view>
+						<view class="btn blue" @click="delItem">删除{{totalSelect>0 ? '('+ totalSelect + ')' : ''}}</view>
 					</view>
 					</template>
 					
@@ -56,7 +56,7 @@
 							<text>总计:￥{{totalPrice}}</text>
 						</view>
 						<view class="btn blue">
-							结算({{totalSelect}})
+							结算{{totalSelect>0 ? '('+ totalSelect + ')': ''}}
 						</view>
 					</template>
 					
@@ -108,25 +108,27 @@
 				this.productList[index].count = val
 			},
 			delItem(){
-			uni.showModal({
-				title:'提示',
-				content:'是否删除商品',
-				cancelText:'放弃',
-				cancelColor:'#1AAD19',
-				confirmColor:'#FF3333',
-				confirmText:'确定',
-				success(res) {
-					if(res.confirm){
-						this.productList.filter(item => item.ischeck).forEach(item => {
-								 let index = this.productList.indexOf(item)
-								this.productList.splice(index, 1)
-							})
-						console.log('aaa');
+				let prdList = this.productList
+				let arr = this.productList.filter(item => item.ischeck)
+				uni.showModal({
+					title:'是否删除',
+					content: arr.length === prdList.length ? '是否删除全部商品' : '是否删除要'+arr.length +'件商品',
+					success(res) {
+						if(res.confirm){
+								arr.forEach(item => {
+								let index = prdList.indexOf(item)
+								prdList.splice(index, 1)
+						})
+						}
 					}
-				}
-			})
+					
+				})
+				
+				
+				
 			
-			}
+				}
+		
 			
 		},
 		computed:{
