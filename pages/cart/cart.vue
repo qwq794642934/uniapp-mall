@@ -55,7 +55,7 @@
 						<view class="total-price">
 							<text>总计:￥{{totalPrice}}</text>
 						</view>
-						<view class="btn blue">
+						<view class="btn blue" :class="{ 'touchColor' : isTouch}" @touchstart="touchstart" @touchend="touchend">
 							结算{{totalSelect>0 ? '('+ totalSelect + ')': ''}}
 						</view>
 					</template>
@@ -84,16 +84,23 @@
 	export default {
 		components:{
 			NavBar,
-			Icon,
 			StatusBar,
 			NumberBox
 		},
 		data() {
 			return {
 				isNav: false,
+				isTouch: false
 			}
 		},
 		methods: {
+			// 按钮颜色事件
+			touchstart(){
+				this.isTouch  = true
+			},
+			touchend(){
+				this.isTouch  = false
+			},
 			checked(index){
 				this.productList[index].ischeck = !this.productList[index].ischeck
 			},
@@ -108,26 +115,29 @@
 				this.productList[index].count = val
 			},
 			delItem(){
+
 				let prdList = this.productList
 				let arr = this.productList.filter(item => item.ischeck)
-				uni.showModal({
-					title:'是否删除',
-					content: arr.length === prdList.length ? '是否删除全部商品' : '是否删除要'+arr.length +'件商品',
-					success(res) {
-						if(res.confirm){
-								arr.forEach(item => {
-								let index = prdList.indexOf(item)
-								prdList.splice(index, 1)
-						})
-						}
-					}
-					
-				})
-				
-				
-				
-			
+				if(arr.length !== 0){
+					// uni.showModal({
+					// 	title:'是否删除',
+					// 	content: arr.length === prdList.length ? '是否删除全部商品' : '是否删除要'+arr.length +'件商品',
+					// 	success(res) {
+					// 		if(res.confirm){
+					// 				arr.forEach(item => {
+					// 				let index = prdList.indexOf(item)
+					// 				prdList.splice(index, 1)
+					// 		})
+					// 		}
+					// 	}
+					// })
+				}else{
+					uni.showToast({
+						title:'请选择商品',
+						icon:'none'
+					})
 				}
+			}
 		
 			
 		},
@@ -206,7 +216,10 @@
 	 text-align: center;
  }
  .blue{
-	 background: #00A2F3;
+	 background: #00d0fe;
+ }
+ .touchColor{
+	  background: #007AFF;
  }
  .black{
 	 background: #000000;

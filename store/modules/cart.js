@@ -101,14 +101,27 @@ const actions = {
 }
 const mutations = {
 	addToCart(state, payload){
-			let old = state.list.find(item => item.id === payload.id)
-			if(old){
-				let index	 = state.list.indexOf(old)
-				state.list[index].count = parseInt(state.list[index].count) + parseInt(payload.count) 
-			}else{
-				payload.ischeck = true
-				state.list.push(payload)
-			}
+		//首先 找出购物车id 相同的商品
+		let index = state.list.findIndex(item => item.id === payload.id)
+		// 如果大于负一 说明商品已在
+		if(index > -1){
+			state.list[index].count += parseInt(payload.count)
+		}else{
+			payload.ischeck = true
+			state.list.push(payload)
+		}
+		// 否则不在
+		
+		
+		
+			// let old = state.list.find(item => item.id === payload.id)
+			// if(old){
+			// 	let index	 = state.list.indexOf(old)
+			// 	state.list[index].count = parseInt(state.list[index].count) + parseInt(payload.count) 
+			// }else{
+			// 	payload.ischeck = true
+			// 	state.list.push(payload)
+			// }
 			
 	}
 }

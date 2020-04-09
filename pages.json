@@ -54,7 +54,10 @@
 		}, {
 			"path": "pages/profile/profile",
 			"style": {
-				"navigationBarTitleText": "个人中心"
+				"app-plus":{
+					"titleNView":false,
+					"scrollIndicator":"none"
+				}
 			}
 		}
         ,{
